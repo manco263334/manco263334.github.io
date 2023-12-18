@@ -6,21 +6,21 @@ function azar(){
     alert("Contarás con solo 10 intentos, así que buena suerte Bv");
     let i = 1;
     do{
-        num = parseInt(prompt("Ingresa el número que crees que es el correcto (este es tu intento " + i + ")"));
+        num = parseInt(prompt(`Ingresa el número que crees que es el correcto (este es tu intento ${i})`));
         if(num > random){
             if(i != 10){
                 alert("El número ingresado es mayor que el que hay que adivinar");
             }else{
-                alert("Lo siento, no has adivinado. El número era: " + random + ". Suerte para la próxima amigo ;)");
+                alert(`Lo siento, no has adivinado. El número era: ${random}. Suerte para la próxima amigo ;)`);
             }
         }else if(num < random){
             if(i != 10){
                 alert("El número ingresado es menor que el que hay que adivinar");
             }else{
-                alert("Lo siento, no has adivinado. El número era: " + random + ". Suerte para la próxima amigo ;)");
+                alert(`Lo siento, no has adivinado. El número era: ${random}. Suerte para la próxima amigo ;)`);
             }
         }else if(num == random){
-            alert("¡Felicidades, has adivinado el número en un total de " + i + " intentos! :D");
+            alert(`¡Felicidades, has adivinado el número en un total de ${i} intentos! :D`);
         }else{
             alert("Ingresa un número, no una cadena");
             i--;
@@ -43,7 +43,7 @@ function zoologico(){
         case "elefante":
             for(i = 1; i <= 20; i++){
                 do{
-                    edad = parseFloat(prompt("Ingrese la edad del " + animal + " número " + i));
+                    edad = parseFloat(prompt(`Ingrese la edad del ${animal} número ${i}`));
                     if(edad < 0){
                         alert("Ingresa un edad válida");
                     }else if(edad >= 0 && edad <= 1){
@@ -59,18 +59,18 @@ function zoologico(){
                 }while(edad < 0);
                 if(i == 20){
                     porce = cat1 / i * 100;
-                    alert("El porcentaje de " + animal + "s que están dentro de la categoría 1 es del: " + porce + "%");
+                    alert(`El porcentaje de ${animal}s que están dentro de la categoría 1 es del: ${porce}%`);
                     porce = cat2 / i * 100;
-                    alert("El porcentaje de " + animal + "s que están dentro de la categoría 2 es del: " + porce + "%");
+                    alert(`El porcentaje de ${animal}s que están dentro de la categoría 2 es del: ${porce}%`);
                     porce = cat3 / i * 100;
-                    alert("El porcentaje de " + animal + "s que están dentro de la categoría 3 es del: " + porce + "%");
+                    alert(`El porcentaje de ${animal}s que están dentro de la categoría 3 es del: ${porce}%`);
                 }
             }
             break;
         case "jirafa":
             for(i = 1; i <= 15; i++){
                 do{
-                    edad = parseFloat(prompt("Ingrese la edad de la " + animal + " número " + i));
+                    edad = parseFloat(prompt(`Ingrese la edad de la ${animal} número ${i}`));
                     if(edad < 0){
                         alert("Ingresa un edad válida");
                     }else if(edad >= 0 && edad <= 1){
@@ -86,18 +86,18 @@ function zoologico(){
                 }while(edad < 0);
                 if(i == 15){
                     porce = cat1 / i * 100;
-                    alert("El porcentaje de " + animal + "s que están dentro de la categoría 1 es del: " + porce + "%");
+                    alert(`El porcentaje de ${animal}s que están dentro de la categoría 1 es del: ${porce}%`);
                     porce = cat2 / i * 100;
-                    alert("El porcentaje de " + animal + "s que están dentro de la categoría 2 es del: " + porce + "%");
+                    alert(`El porcentaje de ${animal}s que están dentro de la categoría 2 es del: ${porce}%`);
                     porce = cat3 / i * 100;
-                    alert("El porcentaje de " + animal + "s que están dentro de la categoría 3 es del: " + porce + "%");
+                    alert(`El porcentaje de ${animal}s que están dentro de la categoría 3 es del: ${porce}%`);
                 }
             }
             break;
         case "chimpance":
             for(i = 1; i <= 40; i++){
                 do{
-                    edad = parseFloat(prompt("Ingrese la edad del " + animal + " número " + i));
+                    edad = parseFloat(prompt(`Ingrese la edad del ${animal} número ${i}`));
                     if(edad < 0){
                         alert("Ingresa un edad válida");
                     }else if(edad >= 0 && edad <= 1){
@@ -113,11 +113,11 @@ function zoologico(){
                 }while(edad < 0);
                 if(i == 40){
                     porce = cat1 / i * 100;
-                    alert("El porcentaje de " + animal + "s que están dentro de la categoría 1 es del: " + porce + "%");
+                    alert(`El porcentaje de ${animal}s que están dentro de la categoría 1 es del: ${porce}%`);
                     porce = cat2 / i * 100;
-                    alert("El porcentaje de " + animal + "s que están dentro de la categoría 2 es del: " + porce + "%");
+                    alert(`El porcentaje de ${animal}s que están dentro de la categoría 2 es del: ${porce}%`);
                     porce = cat3 / i * 100;
-                    alert("El porcentaje de " + animal + "s que están dentro de la categoría 3 es del: " + porce + "%");
+                    alert(`El porcentaje de ${animal}s que están dentro de la categoría 3 es del: ${porce}%`);
                 }
             }
             break;
@@ -147,7 +147,7 @@ function decimalabinarioyviceversa(){
                     num2 = Math.trunc(num2 / 2);
                     base *= 10;
                 }
-                alert("El número " + num + " en Binario es: " + binario);
+                alert(`El número ${num} en Binario es: ${binario}`);
                 break;
             case 2:
                 ok = false;
@@ -172,7 +172,7 @@ function decimalabinarioyviceversa(){
                 for(n = 0; n < long; n++){
                     sum += parseInt(String(num).substring(n, n + 1)) * Math.pow(2, (j - n));
                 }
-                alert("El número "+ num + " en Decimal es: " + sum);
+                alert(`El número ${num} en Decimal es: ${sum}`);
                 break;
             default:
                 alert("Ingrese una opción válida");
@@ -207,7 +207,7 @@ function decimalaoctalyviceversa(){
                     num2 = Math.trunc(num2 / 8);
                     base *= 10;
                 }
-                alert("El número " + num + " en Octal es: " + octal);
+                alert(`El número ${num} en Octal es: ${octal}`);
                 break;
             case 2:
                 ok = false;
@@ -232,7 +232,7 @@ function decimalaoctalyviceversa(){
                 for(n = 0; n < long; n++){
                     sum += parseInt(String(num).substring(n, n + 1)) * Math.pow(8, (j - n));
                 }
-                alert("El número "+ num + " en Decimal es: " + sum);
+                alert(`El número ${num} en Decimal es: ${sum}`);
                 break;
             default:
                 alert("Ingrese una opción válida");
@@ -286,13 +286,14 @@ function decimalahexadecimalyviceversa(){
                     }
                     num2 = Math.trunc(num2 / 16);
                 }
-                alert("El número "+ num + " en Hexadecimal es: " + hexa);
+                alert(`El número ${num} en Hexadecimal es: ${hexa}`);
                 break;
             case 2:
                 ok = false;
                 do{
                     sum = 0;
                     num = prompt("Ingresa el número que desea convertir a Decimal");
+                    num = num.toUpperCase();
                     long = num.length;
                     for(n = 0; n < long; n++){
                         if(parseInt(num.substring(n, n + 1)) >= 0 && parseInt(num.substring(n, n + 1)) <= 9 || num.substring(n, n + 1) == "A" || num.substring(n, n + 1) == "B" || num.substring(n, n + 1) == "C" || num.substring(n, n + 1) == "D" || num.substring(n, n + 1) == "E" || num.substring(n, n + 1) == "F"){
@@ -333,7 +334,7 @@ function decimalahexadecimalyviceversa(){
                         break;
                     }
                 }
-                alert("El número " + num + " en Decimal es: " + sum);
+                alert(`El número ${num} en Decimal es: ${sum}`);
                 break;
             default:
                 alert("Ingrese una opción válida");
@@ -378,7 +379,7 @@ function ATM(){
                 }while(reti <= 0);
                 break;
             case 3:
-                alert("Su saldo actual es de: $" + dine);
+                alert(`Su saldo actual es de: $${dine}`);
                 break;
             default:
                 alert("Opción inválida, ingrese otra opción");
