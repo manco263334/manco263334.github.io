@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset = "UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Ejercicos de MP</title>
     <script src = "script.js"></script>
@@ -30,28 +30,29 @@
         Haga clic en cualquiera de los siguientes botones
     </h1>
     <hr>
-    <nav>
-        <ul>
-            <button onclick = "azar()" id = "Azar">
-                Juego de adivinar un número aleatorio entre el 1 y el 100
-            </button>
-            <button onclick = "zoologico()" id = "Zoologico">
-                Ejercicio del zoológico
-            </button>
-            <button onclick = "decimalabinarioyviceversa()">
-                Convertir de Decimal a Binario Y Viceversa
-            </button>
-            <button onclick = "decimalaoctalyviceversa()">
-                Convertir de Decimal a Octal Y Viceversa
-            </button>
-            <button onclick = "decimalahexadecimalyviceversa()">
-                Convertir de Decimal a Hexadecimal Y Viceversa
-            </button>
-            <button onclick = "ATM()">
-                Simulador de cajero automático
-            </button>
-        </ul>
-    </nav>
+    <select id = "Opciones">
+        <option value = "Opcion1">
+            Juego de adivinar un número aleatorio entre el 1 y el 100
+        </option>
+        <option value = "Opcion2">
+            Ejercicio del zoológico
+        </option>
+        <option value = "Opcion3">
+            Convertir de Decimal a Binario Y Viceversa
+        </option>
+        <option value = "Opcion4">
+            Convertir de Decimal a Octal Y Viceversa
+        </option>
+        <option value = "Opcion5">
+            Convertir de Decimal a Hexadecimal Y Viceversa
+        </option>
+        <option value = "Opcion6">
+            Simulador de cajero automático
+        </option>
+    </select>
+    <button id = "ScriptButton" onclick = "ejecutarscript()">
+        Ejecutar
+    </button>
     <hr>
     <p>
         Por favor, no hagas clic en la siguiente imagen

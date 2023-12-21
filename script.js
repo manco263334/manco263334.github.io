@@ -5,8 +5,9 @@ function azar(){
     alert("Tu objetivo será adivinar el número que se ha escogido aleatoramiente en un intervalo del 1 al 100 y, además, solo números enteros");
     alert("Contarás con solo 10 intentos, así que buena suerte Bv");
     let i = 1;
+    salir:
     do{
-        num = parseInt(prompt(`Ingresa el número que crees que es el correcto (este es tu intento ${i})`));
+        num = parseInt(prompt(`Ingresa el número que crees que es el correcto (este es tu intento ${i}) o escriba un texto cualquiera para salir del programa`));
         if(num > random){
             if(i != 10){
                 alert("El número ingresado es mayor que el que hay que adivinar");
@@ -22,8 +23,7 @@ function azar(){
         }else if(num == random){
             alert(`¡Felicidades, has adivinado el número en un total de ${i} intentos! :D`);
         }else{
-            alert("Ingresa un número, no una cadena");
-            i--;
+            break salir;
         }
         i++;
     }while(i <= 10 && num != random);
@@ -41,9 +41,10 @@ function zoologico(){
     }while(animal != "elefante" && animal != "jirafa" && animal != "chimpance");
     switch(animal){
         case "elefante":
+            salirElefante:
             for(i = 1; i <= 20; i++){
                 do{
-                    edad = parseFloat(prompt(`Ingrese la edad del ${animal} número ${i}`));
+                    edad = parseFloat(prompt(`Ingrese la edad del ${animal} número ${i} o escriba un texto cualquiera para salir del programa`));
                     if(edad < 0){
                         alert("Ingresa un edad válida");
                     }else if(edad >= 0 && edad <= 1){
@@ -53,8 +54,7 @@ function zoologico(){
                     }else if(edad >= 3){
                         cat3++;
                     }else{
-                        alert("Ingrese un número, no una cadena");
-                        i--;
+                        break salirElefante;
                     }
                 }while(edad < 0);
                 if(i == 20){
@@ -68,9 +68,10 @@ function zoologico(){
             }
             break;
         case "jirafa":
+            salirJirafa:
             for(i = 1; i <= 15; i++){
                 do{
-                    edad = parseFloat(prompt(`Ingrese la edad de la ${animal} número ${i}`));
+                    edad = parseFloat(prompt(`Ingrese la edad de la ${animal} número ${i} o escriba un texto cualquiera para salir del programa`));
                     if(edad < 0){
                         alert("Ingresa un edad válida");
                     }else if(edad >= 0 && edad <= 1){
@@ -80,8 +81,8 @@ function zoologico(){
                     }else if(edad >= 3){
                         cat3++;
                     }else{
-                        alert("Ingrese un número, no una cadena");
-                        i--;
+                        break salirJirafa;
+                    
                     }
                 }while(edad < 0);
                 if(i == 15){
@@ -95,9 +96,10 @@ function zoologico(){
             }
             break;
         case "chimpance":
+            salirChimpance:
             for(i = 1; i <= 40; i++){
                 do{
-                    edad = parseFloat(prompt(`Ingrese la edad del ${animal} número ${i}`));
+                    edad = parseFloat(prompt(`Ingrese la edad del ${animal} número ${i} o escriba un texto cualquiera para salir del programa`));
                     if(edad < 0){
                         alert("Ingresa un edad válida");
                     }else if(edad >= 0 && edad <= 1){
@@ -107,8 +109,7 @@ function zoologico(){
                     }else if(edad >= 3){
                         cat3++;
                     }else{
-                        alert("Ingrese un número, no una cadena");
-                        i--;
+                        break salirChimpance;
                     }
                 }while(edad < 0);
                 if(i == 40){
@@ -390,4 +391,28 @@ function ATM(){
         accion = accion.toUpperCase();
     }while(accion == "S");
     alert("Que tenga un lindo día ;)");
+}
+
+function ejecutarscript(){
+    var opciones = document.getElementById("Opciones").value;
+    switch(opciones){
+        case "Opcion1":
+            azar();
+            break;
+        case "Opcion2":
+            zoologico();
+            break;
+        case "Opcion3":
+            decimalabinarioyviceversa()
+            break;
+        case "Opcion4":
+            decimalaoctalyviceversa()
+            break;
+        case "Opcion5":
+            decimalahexadecimalyviceversa()
+            break;
+        case "Opcion6":
+            ATM()
+            break;
+    }
 }
