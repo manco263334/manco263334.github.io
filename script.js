@@ -82,7 +82,6 @@ function zoologico(){
                         cat3++;
                     }else{
                         break salirJirafa;
-                    
                     }
                 }while(edad < 0);
                 if(i == 15){
