@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios de MP</title>
-    <script src = "script.js"></script>
-    <link rel = "stylesheet" href = "script.css">
 </head>
 <body>
     <header>
@@ -30,36 +28,84 @@
         Seleccione cualquiera de las siguientes opciones y luego haga clic en el botón que dice Ejecutar
     </h1>
     <hr>
-    <select id = "Opciones">
-        <option value = "Opcion1">
-            Juego de adivinar un número aleatorio entre el 1 y el 100
-        </option>
-        <option value = "Opcion2">
-            Ejercicio del zoológico
-        </option>
-        <option value = "Opcion3">
-            Convertir de Decimal a Binario Y Viceversa
-        </option>
-        <option value = "Opcion4">
-            Convertir de Decimal a Octal Y Viceversa
-        </option>
-        <option value = "Opcion5">
-            Convertir de Decimal a Hexadecimal Y Viceversa
-        </option>
-        <option value = "Opcion6">
-            Simulador de cajero automático
-        </option>
+    <select id="Opciones">
+        <option value="Opcion1">Juego de adivinar un número aleatorio entre el 1 y el 100</option>
+        <option value="Opcion2">Convertir de Decimal a Binario Y Viceversa</option>
+        <option value="Opcion3">Convertir de Decimal a Octal Y Viceversa</option>
+        <option value="Opcion4">Convertir de Decimal a Hexadecimal Y Viceversa</option>
     </select>
-    <button id = "ScriptButton" onclick = "ejecutarscript()">
-        Ejecutar
-    </button>
+    <br><br>
+    <div id="formularioOpcion1">
+        <p>Bienvenido a este increíble juego de adivinar números<br>
+            Tu objetivo será adivinar el número que se ha escogido aleatoramiente en un intervalo del 1 al 100 y, además, solo números enteros
+            <br>Contarás con solo 10 intentos, así que buena suerte Bv
+        </p>
+        <form>
+            <label for="numAl">Ingresa el número que crees que es el correcto</label>
+            <br>
+            <input type="text" id="numAl">
+            <br><br>
+            <input type="submit" id="submit1">
+            <br><br>
+            <p id="paragraph1"></p>
+            <p id="parag"></p>
+        </form>
+    </div>
+
+    <div id="formularioOpcion2" style="display: none;">
+        <form>
+            <label for="decabin">Ingrese el número en Decimal que va a convertir a Binario</label><br>
+            <input type="text" id="decabin"><br><br>
+            <input type="submit" id="submit2.1"><br>
+            <p id="paragraph2.1"></p>
+        </form>
+        <form>
+            <label for="binadec">Ingrese el número en Binario que va a convertir a Decimal</label><br>
+            <input type="text" id="binadec"><br><br>
+            <input type="submit" id="submit2.2"><br>
+            <p id="paragraph2.2"></p>
+        </form>
+    </div>
+
+    <div id="formularioOpcion3" style="display: none;">
+        <form>
+            <label for="decaoct">Ingrese el número en Decimal que va a convertir a Octal</label><br>
+            <input type="text" id="decaoct"><br><br>
+            <input type="submit" id="submit3.1">
+            <p id="paragraph3.1"></p>
+        </form>
+        <form>
+            <label for="octadec">Ingrese el número en Octal que va a convertir a Decimal</label><br>
+            <input type="text" id="octadec"><br><br>
+            <input type="submit" id="submit3.2">
+            <p id="paragraph3.2"></p>
+        </form>
+    </div>
+
+    <div id="formularioOpcion4" style="display: none;">
+        <form>
+            <label for="decahex">Ingrese el número en Decimal que va a convertir a Hexadecimal</label><br>
+            <input type="text" id="decahex"><br><br>
+            <input type="submit" id="submit4.1">
+            <p id="paragraph4.1"></p>
+        </form>
+        <form>
+            <label for="hexadec">Ingrese el número en Hexadecimal que va a convertir a Decimal</label><br>
+            <input type="text" id="hexadec"><br><br>
+            <input type="submit" id="submit4.2">
+            <p id="paragraph4.2"></p>
+        </form>
+    </div>
+    <button onclick="ejecutarScript()" id="ScriptButton">Ejecutar</button>
     <hr>
-    <p>
+    <p id="paragraph">
         Por favor, no hagas clic en la siguiente imagen
     </p>
     <a href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ" target = "_blank"><img src = "1A DSM/1A DSM.jpg" alt = "1A DSM"></a>
     <footer>
         Esta página fue elaborado por Hugu34
     </footer>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="script.css">
 </body>
 </html>

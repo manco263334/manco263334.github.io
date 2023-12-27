@@ -30,7 +30,11 @@ nav ul li{
     scale: calc(100%);
     text-decoration: underline;
 }
-
+#paragraph{
+    text-align: center;
+    color: crimson;
+    font-weight: bold;
+}
 nav ul li a{
     color: white;
     text-decoration: none;  
@@ -71,12 +75,6 @@ footer{
     margin-top: 15px;
 }
 
-p{
-    text-align: center;
-    color: crimson;
-    font-weight: bold;
-}
-
 img{
     display: block;
     margin: 0 auto 0 auto;
@@ -95,11 +93,50 @@ select{
     text-align: center;
 }
 
+div#formularioOpcion1, div#formularioOpcion2, div#formularioOpcion3, div#formularioOpcion4{
+    text-align: center;
+    align-items: center;
+}
+
+div#formularioOpcion1 form, div#formularioOpcion2 form, div#formularioOpcion3 form, div#formularioOpcion4 form{
+    background-color: burlywood;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+div#formularioOpcion1 p, div#formularioOpcion2 p, div#formularioOpcion3 p, div#formularioOpcion4 p{
+    background-color: burlywood;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+input[type="text"], input[type="submit"]{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"]{
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
 #ScriptButton{
     display: block;
     background-color: brown;
     margin: 10px auto 10px auto;
-    padding: 5px 5px 5px 5px;
     color: white;
     font-weight: bold;
     border-radius: 5%;
