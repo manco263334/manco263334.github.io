@@ -9,7 +9,6 @@ function reiniciarnum(){
 
 function azar(event){
     event.preventDefault();
-    
     const p1 = document.getElementById("paragraph1");
     const numAl = parseFloat(document.getElementById("numAl").value);
     if(isNaN(numAl) || numAl < 0 || numAl > 100){
@@ -240,47 +239,25 @@ document.getElementById("Opciones").addEventListener("change", function(){
 })
 
 function ejecutarScript(){
-    const opciones = document.getElementById("Opciones").value;
     ocultarFormularios();
-    switch(opciones){
-        case "Opcion1":
-            mostrarFormulario1();
-            break;
-        case "Opcion2":
-            mostrarFormulario2();
-            break;
-        case "Opcion3":
-            mostrarFormulario3();
-            break;
-        case "Opcion4":
-            mostrarFormulario4();
-            break;
-    }
+    const opciones = document.getElementById("Opciones").value;
+    mostrarFormulario(opciones);
+}
+
+function mostrarFormulario(opciones){
+    const num = opciones.substring(opciones.length - 1, opciones.length);
+    const form = `formularioOpcion${num}`;
+    document.getElementById(form).style.display = "block";
 }
 
 function ocultarFormularios(){
-    document.getElementById("formularioOpcion1").style.display = "none";
-    document.getElementById("formularioOpcion2").style.display = "none";
-    document.getElementById("formularioOpcion3").style.display = "none";
-    document.getElementById("formularioOpcion4").style.display = "none";
+    const opci = document.getElementById("Opciones");
+    const numOpciones = opci.options.length;
+    for(let i = 1; i <= numOpciones; i++){
+        const forms = `formularioOpcion${i}`; 
+        document.getElementById(forms).style.display = "none";
+    }
 }
-
-function mostrarFormulario1(){
-    document.getElementById("formularioOpcion1").style.display = "block";
-}
-
-function mostrarFormulario2(){
-    document.getElementById("formularioOpcion2").style.display = "block";
-}
-
-function mostrarFormulario3(){
-    document.getElementById("formularioOpcion3").style.display = "block";
-}
-
-function mostrarFormulario4(){
-    document.getElementById("formularioOpcion4").style.display = "block";
-}
-
 const submit1 = document.getElementById("submit1");
 submit1.addEventListener("click", function(event){
     azar(event);
