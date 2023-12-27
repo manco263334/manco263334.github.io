@@ -1,17 +1,17 @@
-const random = Math.floor(Math.random() * 100) + 1;
-let i = 0;
+const random = Math.floor(Math.random() * 100) + 1; //se ejecuta cada que la página se reinicia, por ende, cada vez que se refresque la pagina se cambiará nuevamente el número
+let i = 1;
 
-function reiniciarnum(){
+function reiniciarnum(){ //una vez que el usuario haya adivinado el número y el botón se haya desplegado y tocado entonces se reiniciará nuevamente el juego
     const random = Math.floor(Math.random() * 100) + 1;
-    let i = 0;
-    document.getElementById("reestablecerjuego").style.display = "none";
+    let i = 1;
+    document.getElementById("reestablecerjuego").style.display = "none"; //oculta el botón para reiniciar el juego
 }
 
-function azar(event){
-    event.preventDefault();
+function azar(event){ //función que permite comparar el número ingresado por el usuario con el número elegido aleatoriamente
+    event.preventDefault(); //previene el comportamiento por defecto del formulario
     const p1 = document.getElementById("paragraph1");
     const numAl = parseFloat(document.getElementById("numAl").value);
-    if(isNaN(numAl) || numAl < 0 || numAl > 100){
+    if(isNaN(numAl) || numAl < 0 || numAl > 100){ //válida que el "número" ingresado por el usuario no sea menor a 0, ni mayor a 100 ni mucho menos que sea una cadena de texto (isNaN significa 'is Not a Number')
         p1.innerHTML = "Ingrese un valor numérico válido";
         return;
     }
@@ -26,43 +26,43 @@ function azar(event){
         return;
     }
     p1.innerHTML = `¡Felicidades, has adivinado el número en un total de ${i} intentos :D!`;
-    document.getElementById("reestablecerjuego").style.display = "block";
+    document.getElementById("reestablecerjuego").style.display = "block"; //muestra el botón una vez que se haya adivinado el número
     return;
 }
 
 
-function decimalabinario(event){
-    event.preventDefault();
+function decimalabinario(event){ //función que permite convertir un número en base 10 a base 2
+    event.preventDefault(); //previene el comportamiento por defecto del formulario
     const p2_1 = document.getElementById("paragraph2.1");
     const dec = parseInt(document.getElementById("decabin").value);
-    if(isNaN(dec)){
+    if(isNaN(dec)){ //válida que lo que ingrese el usuario sea un número y no una cadena
         p2_1.innerHTML = "Ingrese un número válido";
         return;
     }
-    if(dec < 0){
+    if(dec < 0){ //válida que el número sea mayor o igual que 0
         p2_1.innerHTML = "Ingrese un número positivo";
     }
     let bin = 0, base = 1, residuo, num = dec;
     while(num > 0){
-        residuo = num % 2;
-        bin += residuo * base;
-        base *= 10;
-        num = Math.trunc(num / 2);
+        residuo = num % 2; //el residuo solamente puede ser 0 ó 1
+        bin += residuo * base; //bin almacena lo que ya tenía y le suma el resultado de multiplicar el residuo (0 ó 1) por la base
+        base *= 10; //la base aumenta su valor por 10
+        num = Math.trunc(num / 2); //num guarda la parte entera de dividir entre sí mismo por 2
     }
     p2_1.innerHTML = `El número ${dec} en Binario es ${bin}`;
     return;
 }
 
-function binarioadecimal(event){
-    event.preventDefault();
+function binarioadecimal(event){ //función que permite convertir un número base 2 a base 10
+    event.preventDefault(); //previene el comportamiento por defecto del formulario
     const p2_2 = document.getElementById("paragraph2.2");
     const bin = parseInt(document.getElementById("binadec").value);
-    if(isNaN(bin)){
+    if(isNaN(bin)){ //válida que lo que ingrese el usuario no sea una cadena de texto
         p2_2.innerHTML = "Ingrese un número válido";
         return;
     }
-    const ok = esBin(bin);
-    if(!ok){
+    const ok = esBin(bin); //llama a la función que permite validar si un número es binario o no
+    if(!ok){ //si el número no es binario despliega el siguiente mensaje
         p2_2.innerHTML = `El número ${bin} no es un número Binario, por favor ingrese un número en Binario válido`;
         return;
     }
@@ -75,13 +75,13 @@ function binarioadecimal(event){
     return;
 }
 
-function esBin(bin){
+function esBin(bin){ //función que permite si un número es binario o no
     for(var i = 0; i < bin.toString().length; i++){
         if(parseInt(bin.toString().substring(i, i + 1)) !== 0 && parseInt(bin.toString().substring(i, i + 1)) !== 1 || bin.toString().substring(i, i + 1) === "-"){
-            return false;
+            return false; //si al menos uno de los valores ingresados por el usuario es distinto de 1 y de 0 entonces el número no es binario
         }
     }
-    return true;
+    return true; //de la contrario sí es un número binario
 }
 
 function decimalaoctal(event){
