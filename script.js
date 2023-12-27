@@ -4,7 +4,7 @@ function azar(event){
     event.preventDefault();
     const p1 = document.getElementById("paragraph1");
     const numAl = parseFloat(document.getElementById("numAl").value);
-    if(isNaN(numAl) || numAl < 0){
+    if(isNaN(numAl) || numAl < 0 || numAl > 100){
         p1.innerHTML = "Ingrese un valor numérico válido";
         return;
     }
