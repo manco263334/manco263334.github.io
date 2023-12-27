@@ -1,7 +1,15 @@
 const random = Math.floor(Math.random() * 100) + 1;
 let i = 0;
+
+function reiniciarnum(){
+    const random = Math.floor(Math.random() * 100) + 1;
+    let i = 0;
+    document.getElementById("reestablecerjuego").style.display = "none";
+}
+
 function azar(event){
     event.preventDefault();
+    
     const p1 = document.getElementById("paragraph1");
     const numAl = parseFloat(document.getElementById("numAl").value);
     if(isNaN(numAl) || numAl < 0 || numAl > 100){
@@ -19,7 +27,7 @@ function azar(event){
         return;
     }
     p1.innerHTML = `¡Felicidades, has adivinado el número en un total de ${i} intentos :D!`;
-    document.getElementById("parag").innerHTML = "Refresque la página para adivinar otro número";
+    document.getElementById("reestablecerjuego").style.display = "block";
     return;
 }
 
@@ -227,6 +235,9 @@ function esHex(hex){
     return false;
 }
 
+document.getElementById("Opciones").addEventListener("change", function(){
+    ejecutarScript();
+})
 
 function ejecutarScript(){
     const opciones = document.getElementById("Opciones").value;

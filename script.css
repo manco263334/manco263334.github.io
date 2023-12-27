@@ -133,11 +133,9 @@ input[type="submit"]{
     cursor: pointer;
 }
 
-#ScriptButton{
-    display: block;
-    background-color: brown;
-    margin: 10px auto 10px auto;
+#reestablecerjuego{
+    margin: 0 auto 0 auto;
+    background-color: #4CAF50;
     color: white;
     font-weight: bold;
-    border-radius: 5%;
 }

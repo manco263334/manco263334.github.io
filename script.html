@@ -25,7 +25,7 @@
     </nav>
     <h1>
         A continuación, una muestra de los ejercicios que he hecho en este primer cuatrimestre.<br>
-        Seleccione cualquiera de las siguientes opciones y luego haga clic en el botón que dice Ejecutar
+        Seleccione cualquiera de las siguientes opciones para que se despliegue su respectivo formulario
     </h1>
     <hr>
     <select id="Opciones">
@@ -38,7 +38,6 @@
     <div id="formularioOpcion1">
         <p>Bienvenido a este increíble juego de adivinar números<br>
             Tu objetivo será adivinar el número que se ha escogido aleatoramiente en un intervalo del 1 al 100 y, además, solo números enteros
-            <br>Contarás con solo 10 intentos, así que buena suerte Bv
         </p>
         <form>
             <label for="numAl">Ingresa el número que crees que es el correcto</label>
@@ -48,7 +47,8 @@
             <input type="submit" id="submit1">
             <br><br>
             <p id="paragraph1"></p>
-            <p id="parag"></p>
+            <br><br>
+            <button style="display: none;" id="reestablecerjuego" onclick="reiniciarnum()">Reiniciar el juego</button>
         </form>
     </div>
 
@@ -96,7 +96,6 @@
             <p id="paragraph4.2"></p>
         </form>
     </div>
-    <button onclick="ejecutarScript()" id="ScriptButton">Ejecutar</button>
     <hr>
     <p id="paragraph">
         Por favor, no hagas clic en la siguiente imagen
