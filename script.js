@@ -5,6 +5,7 @@ function reiniciarnum(){ //una vez que el usuario haya adivinado el número y el
     const random = Math.floor(Math.random() * 100) + 1;
     let i = 1;
     document.getElementById("reestablecerjuego").style.display = "none"; //oculta el botón para reiniciar el juego
+    return;
 }
 
 function azar(event){ //función que permite comparar el número ingresado por el usuario con el número elegido aleatoriamente
@@ -178,6 +179,7 @@ function decimalahexadecimal(event){
         num = Math.trunc(num / 16);
     }
     p4_1.innerHTML = `El número ${dec} en Hexadecimal es ${hex}`;
+    return;
 }
 
 function hexadecimaladecimal(event){
@@ -234,20 +236,18 @@ function esHex(hex){
     return false;
 }
 
-document.getElementById("Opciones").addEventListener("change", function(){
-    ejecutarScript();
-})
-
-function ejecutarScript(){
+document.getElementById("Opciones").addEventListener("change", () => {
     ocultarFormularios();
     const opciones = document.getElementById("Opciones").value;
     mostrarFormulario(opciones);
-}
+    return;
+})
 
 function mostrarFormulario(opciones){
     const num = opciones.substring(opciones.length - 1, opciones.length);
     const form = `formularioOpcion${num}`;
     document.getElementById(form).style.display = "block";
+    return;
 }
 
 function ocultarFormularios(){
@@ -257,7 +257,9 @@ function ocultarFormularios(){
         const forms = `formularioOpcion${i}`; 
         document.getElementById(forms).style.display = "none";
     }
+    return;
 }
+
 const submit1 = document.getElementById("submit1");
 submit1.addEventListener("click", function(event){
     azar(event);

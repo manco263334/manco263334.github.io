@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sugerencias</title>
-    <link rel="stylesheet" href="sugerencias.css">
 </head>
 <body>
     <header>
@@ -28,27 +27,31 @@
             </li>
         </ul>
     </nav>
-    <hr>
-    <p>
-        Primera sugerencia (skibidi toilet en modo 1945)
-    </p>
-    <img src="Sugerencias/Sugerencia1.jpg" alt="Sugerencia 1">
-    <hr>
-    <p>
-        Segunda sugerencia (Creepypasta del "Mini Mini")
-    </p>
-    <video controls>
-        <source src="Sugerencias/Sugerencia2.mp4">
-    </video>
-    <hr>
-    <p>
-        Tercera sugerencia (Creepypasta de "¿Por qué te tatuatís?")
-    </p>
-    <video controls>
-        <source src="Sugerencias/Sugerencia3.mp4">
-    </video>
+    <h1>
+        Seleccione cualquiera de las siguientes sugerencias
+    </h1>
+    <select id="select">
+        <option value="Opcion1">Primera sugerencia (skibidi toilet en modo 1945)</option>
+        <option value="Opcion2">Segunda sugerencia (Creepypasta del "Mini Mini")</option>
+        <option value="Opcion3">Tercera sugerencia (Creepypasta de "¿Por qué te tatuatís?")</option>
+    </select>
+    <div id="divOpcion1" style="display: block;">
+        <img src="Sugerencias/Sugerencia1.jpg" alt="Sugerencia 1">
+    </div>
+    <div id="divOpcion2" style="display: none;">
+        <video controls class="Creepypastas">
+            <source src="Sugerencias/Sugerencia2.mp4">
+        </video>
+    </div>
+    <div id="divOpcion3" style="display: none;">
+        <video controls class="Creepypastas">
+            <source src="Sugerencias/Sugerencia3.mp4">
+        </video>
+    </div>
     <footer>
         Esta página fue elaborado por Hugu34
     </footer>
+    <script src="sugerencias.js"></script>
+    <link rel="stylesheet" href="sugerencias.css">
 </body>
 </html>
