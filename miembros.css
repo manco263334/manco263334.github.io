@@ -1,0 +1,47 @@
+.hidden{
+    display: none;
+}
+
+section h2{
+    font-size: 2.7em;
+}
+
+section p{
+    font-size: 1.25em
+}
+
+section header{
+    text-align: center;
+    padding: 12px;
+    background: peru;
+    color: #fff;
+}
+
+section img{
+    width: 300px;
+    height: 300px;
+    border-radius: 25%;
+}
+section .historia-conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .Historia{
+    height: 400px;
+    width: 50%;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 15px;
+    cursor: default;
+}
+
+section article h2{
+    background-color: rgb(52, 52, 210);
+}
+
+section article{
+    background-color: rgb(218, 225, 92);
+}
