@@ -42,6 +42,7 @@ function decimalabinario(event){ //función que permite convertir un número en 
     }
     if(dec < 0){ //válida que el número sea mayor o igual que 0
         p2_1.innerHTML = "Ingrese un número positivo";
+        return;
     }
     let bin = 0, base = 1, residuo, num = dec;
     while(num > 0){
