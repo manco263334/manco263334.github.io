@@ -31,8 +31,9 @@ function azar(event){ //función que permite comparar el número ingresado por e
     return;
 }
 
+//todas estas funciones empiezan a presentar errores cuando son números muy grandes xd
 
-function decimalabinario(event){ //función que permite convertir un número en base 10 a base 2
+function decimalabinario(event){ //función que convierte un número en base 10 a base 2
     event.preventDefault(); //previene el comportamiento por defecto del formulario
     const p2_1 = document.getElementById("paragraph2.1");
     const dec = parseInt(document.getElementById("decabin").value);
@@ -45,17 +46,17 @@ function decimalabinario(event){ //función que permite convertir un número en 
         return;
     }
     let bin = 0, base = 1, residuo, num = dec;
-    while(num > 0){
-        residuo = num % 2; //el residuo solamente puede ser 0 ó 1
-        bin += residuo * base; //bin almacena lo que ya tenía y le suma el resultado de multiplicar el residuo (0 ó 1) por la base
-        base *= 10; //la base aumenta su valor por 10
-        num = Math.trunc(num / 2); //num guarda la parte entera de dividir entre sí mismo por 2
+    while(num > 0){ //no hace falta explicar que hace
+        residuo = num % 2; 
+        bin += residuo * base; 
+        base *= 10; 
+        num = Math.trunc(num / 2); 
     }
     p2_1.innerHTML = `El número ${dec} en Binario es ${bin}`;
     return;
 }
 
-function binarioadecimal(event){ //función que permite convertir un número base 2 a base 10
+function binarioadecimal(event){ //función que convierte un número base 2 a base 10
     event.preventDefault(); //previene el comportamiento por defecto del formulario
     const p2_2 = document.getElementById("paragraph2.2");
     const bin = parseInt(document.getElementById("binadec").value);
@@ -63,43 +64,49 @@ function binarioadecimal(event){ //función que permite convertir un número bas
         p2_2.innerHTML = "Ingrese un número válido";
         return;
     }
-    const ok = esBin(bin); //llama a la función que permite validar si un número es binario o no
-    if(!ok){ //si el número no es binario despliega el siguiente mensaje
+    if(bin < 0){
+        p2_2.innerHTML = "Ingrese un número positivo";
+        return;
+    }
+    const ok = esBin(bin); //llama a la función que valida si un número es base 2
+    if(!ok){ //si el número no es base 2 despliega el siguiente mensaje
         p2_2.innerHTML = `El número ${bin} no es un número Binario, por favor ingrese un número en Binario válido`;
         return;
     }
     let dec = 0;
-    const j = bin.toString().length - 1;
-    for(var i = 0; i < bin.toString().length; i++){
-        dec += parseInt(bin.toString().substring(i, i + 1)) * Math.pow(2, j - i);
+    const j = String(bin).length - 1;
+    for(var i = 0; i <  String(bin).length; i++){ //busca en Youtube
+        let val = parseInt(String(bin).substring(i, i + 1));
+        dec += val * Math.pow(2, j - i);
     }
     p2_2.innerHTML = `El número ${bin} en Decimal es ${dec}`;
     return;
 }
 
-function esBin(bin){ //función que permite si un número es binario o no
-    for(var i = 0; i < bin.toString().length; i++){
-        if(parseInt(bin.toString().substring(i, i + 1)) !== 0 && parseInt(bin.toString().substring(i, i + 1)) !== 1 || bin.toString().substring(i, i + 1) === "-"){
-            return false; //si al menos uno de los valores ingresados por el usuario es distinto de 1 y de 0 entonces el número no es binario
+function esBin(bin){ //función que permite determinar si un número es binario o no
+    for(var i = 0; i < String(bin).length; i++){
+        let val = parseInt(String(bin).substring(i, i + 1));
+        if(val < 0 || val > 1){ //si esta condición se cumple entonces el número no es base 2
+            return false;
         }
     }
-    return true; //de la contrario sí es un número binario
+    return true; //de la contrario sí es un número base 2
 }
 
-function decimalaoctal(event){
-    event.preventDefault();
+function decimalaoctal(event){ //función que convierte un número base 10 a base 8
+    event.preventDefault(); //previene el comportamiento por defecto del formulario
     const p3_1 = document.getElementById("paragraph3.1");
     const dec = parseInt(document.getElementById("decaoct").value);
-    if(isNaN(dec)){
+    if(isNaN(dec)){ //verifica que lo que ingresó el usuario no sea un texto
         p3_1.innerHTML = "Ingrese un número válido";
         return;
     }
-    if(dec < 0){
+    if(dec < 0){ //verifica que el número sea positivo
         p3_1.innerHTML = "Ingrese un número positivo";
         return;
     }
     let num = dec, base = 1, oct = 0, residuo;
-    while(num > 0){
+    while(num > 0){ //ni en pedo, búscalo por ti mismo
         residuo = num % 8;
         oct += residuo * base;
         base *= 10;
@@ -109,52 +116,59 @@ function decimalaoctal(event){
     return;
 }
 
-function octaladecimal(event){
-    event.preventDefault();
+function octaladecimal(event){ //función que convierte un número base 8 a base 10
+    event.preventDefault(); //previene el comportamiento por defecto del formulario
     const p3_2 = document.getElementById("paragraph3.2");
     const oct = parseInt(document.getElementById("octadec").value);
-    if(isNaN(oct)){
+    if(isNaN(oct)){ //válida que lo que ingresa el usuario no sea una cadena de texto
         p3_2.innerHTML = "Ingrese un número válido";
         return;
     }
-    const ok = esOct(oct);
-    if(!ok){
+    if(oct < 0){ //valida que el número sea positivo
+        p3_2.innerHTML = "Ingrese un número positivo";
+        return;
+    }
+    const ok = esOct(oct); //llama a la función que permite validar si un número es base 8
+    if(!ok){ //si el número no es base 8 despliega el siguiente mensaje
         p3_2. innerHTML = `El número ${oct} no es un número Octal, por favor ingrese un número en Octal válido`;
         return;
     }
     let dec = 0;
-    const j = oct.toString().length - 1;
-    for(var i = 0; i < oct.toString().length; i++){
-        dec += parseInt(oct.toString().substring(i, i + 1)) * Math.pow(8, j - i);
+    const j = String(oct).length - 1;
+    for(var i = 0; i < String(oct).length; i++){ //no seas huevón
+        let val = parseInt(String(oct).substring(i, i + 1));
+        dec += val * Math.pow(8, j - i);
     }
     p3_2.innerHTML = `El número ${oct} en Decimal es ${dec}`;
     return;
 }
 
-function esOct(oct){
-    for(var i = 0; i < oct.toString().length; i++){
-        if(parseInt(oct.toString().substring(i, i + 1)) < 0 || parseInt(oct.toString().substring(i, i + 1)) > 7 || oct.toString().substring(i, i + 1) === "-"){
+function esOct(oct){ //función que valida si un número es base 8
+    for(var i = 0; i < String(oct).length; i++){
+        let val = parseInt(String(oct).substring(i, i + 1));
+        if(val < 0 || val > 7){ //si esto se cumple entonces el número no es base 8
             return false;
         }
     }
-    return true;
+    return true; //de locontrario si es un número base 8
 }
 
-function decimalahexadecimal(event){
-    event.preventDefault();
+function decimalahexadecimal(event){ //función que convierte un número base 10 a base 16
+    event.preventDefault(); //previene el comportamiento por defecto del formulario
     const p4_1 = document.getElementById("paragraph4.1");
     const dec = parseInt(document.getElementById("decahex").value);
-    if(isNaN(dec)){
+    if(isNaN(dec)){ //valida que el usuario no ingrese texto
         p4_1.innerHTML = "Ingrese un número válido";
         return;
     }
-    if(dec < 0){
+    if(dec < 0){ //valida que el número sea positivo
         p4_1.innerHTML = "Ingrese un número positivo";
         return;
     }
     let hex = "", num = dec;
-    while(num > 0){
-        switch(num % 16){
+    while(num > 0){ //no me voy a matar explicando esto
+        let val = num % 16;
+        switch(val){
             case 10:
                 hex = "A" + hex;
                 break;
@@ -174,7 +188,7 @@ function decimalahexadecimal(event){
                 hex = "F" + hex;
                 break;
             default:
-                hex = (num % 16).toString() + hex;
+                hex = String(val) + hex;
                 break;
         }
         num = Math.trunc(num / 16);
@@ -183,17 +197,22 @@ function decimalahexadecimal(event){
     return;
 }
 
-function hexadecimaladecimal(event){
-    event.preventDefault();
+function hexadecimaladecimal(event){ //función que convierte un número base 16 a base 10
+    event.preventDefault(); //previene el comportamiento por defecto del formulario
     const p4_2 = document.getElementById("paragraph4.2");
     const hex = document.getElementById("hexadec").value.toUpperCase();
-    const ok = esHex(hex);
-    if(!ok){
+    if(hex === ""){ //válida que el usuario ingrese algo
+        p4_2.innerHTML = "Ingrese un número válido";
+        return;
+    }
+    const ok = esHex(hex); //llama a la función que valida si un número es base 16
+    if(!ok){ //si el número no es base 16 despliega el siguiente mensaje
         p4_2.innerHTML = `El número ${hex} no es un número Hexadecimal, por favor ingrese un número Hexadecimal válido`;
         return;
     }
-    let dec = 0, j = hex.length - 1;
-    for(var i = 0; i < hex.length; i++){
+    let dec = 0;
+    const j = hex.length - 1;
+    for(var i = 0; i < hex.length; i++){ //ni en tus sueños
         let val = hex.substring(i, i + 1);
         switch(val){
             case "A":
@@ -223,35 +242,32 @@ function hexadecimaladecimal(event){
     return;
 }
 
-function esHex(hex){
+function esHex(hex){ //función que valida si un número es base 16
     let sum = 0;
     for(var i = 0; i < hex.length; i++){
         let val = hex.substring(i, i + 1);
-        if(parseInt(val) >= 0 && parseInt(val) <= 9 || val === "A" || val === "B"|| val === "C" || val === "D" || val === "E"|| val === "F"){
-            sum++;
+        if(!(parseInt(val) >= 0 && parseInt(val) <= 9 || val === "A" || val === "B"|| val === "C" || val === "D" || val === "E"|| val === "F")){ //si la condición se cumple entonces el número no es base 16
+            return false;
         }
     }
-    if(sum == hex.length){
-        return true;
-    }
-    return false;
+    return true; //de lo contrario sí lo es
 }
 
-document.getElementById("Opciones").addEventListener("change", () => {
-    ocultarFormularios();
+document.getElementById("Opciones").addEventListener("change", () => { //acción que oculta los formularios activos y depliega únicamente el que seleccionó el usuario
+    ocultarFormularios(); //llama a la función que oculta formularios
     const opciones = document.getElementById("Opciones").value;
-    mostrarFormulario(opciones);
+    mostrarFormulario(opciones); //lama a la función que muestra el formulario seleccionado
     return;
 })
 
-function mostrarFormulario(opciones){
+function mostrarFormulario(opciones){ //función que muestra el formulario
     const num = opciones.substring(opciones.length - 1, opciones.length);
     const form = `formularioOpcion${num}`;
     document.getElementById(form).style.display = "block";
     return;
 }
 
-function ocultarFormularios(){
+function ocultarFormularios(){//función que oculta formularios
     const opci = document.getElementById("Opciones");
     const numOpciones = opci.options.length;
     for(let i = 1; i <= numOpciones; i++){

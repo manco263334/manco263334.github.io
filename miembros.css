@@ -45,3 +45,7 @@ section article h2{
 section article{
     background-color: rgb(218, 225, 92);
 }
+
+img.pepe{
+    height: 25%;
+}

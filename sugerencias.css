@@ -2,6 +2,11 @@ body{
     background-color: rgb(165, 233, 210);
 }
 
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0%;
+}
+
 header{
     text-align: center;
     scale: calc(110%);
@@ -45,11 +50,6 @@ h1{
     margin-top: 15px;
 }
 
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0%;
-}
-
 p{
     text-align: center;
     color: crimson;
@@ -73,7 +73,7 @@ img{
     width: 50%;
 }
 
-video.Creepypastas{
+video.tiktok{
     width: 25%;
     display: block;
     margin: 0 auto 0 auto;
@@ -89,4 +89,78 @@ select{
     color: darkgoldenrod;
     font-weight: bold;
     text-align: center;
+}
+
+div#divOpcion4 *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+div#divOpcion4 .blender{
+    position: block;
+    margin: 0 auto 0 auto;
+    width: 700px;
+    height: 500px;
+    background-image: url(../Pagina2/Sugerencias/Sugerencia4/img/licuadora-off.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div#divOpcion4 .blender.active{
+    background-image: url(../Pagina2/Sugerencias/Sugerencia4/img/licuadora-on.gif);
+}
+
+div#divOpcion4 .blender-button{
+    transform: translate(0, 360px);
+    margin: 0 auto 0 auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+div#divOpcion5{
+    text-align: center;
+    align-items: center;
+}
+
+div#divOpcion5 form{
+    background-color: burlywood;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+div#divOpcion5 form p{
+    background-color: burlywood;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+div#divOpcion5 form img{
+    overflow: hidden;
+    width: 25%;
+}
+
+div#divOpcion5 input[type="text"], input[type="submit"]{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+div#divOpcion5 input[type="submit"]{
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
 }

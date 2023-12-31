@@ -1,23 +1,94 @@
-function mostrarFormulario(opci){
-    const div = opci.substring(opci.length - 1, opci.length);
-    const num = `divOpcion${div}`;
-    document.getElementById(num).style.display = "block";
+document.getElementById("Opciones").addEventListener("change", () => {
+    ocultarOpciones();
+    const opcion = document.getElementById("Opciones").value;
+    mostrarOpcion(opcion);
+    return;
+});
+
+function mostrarOpcion(opcion){
+    const num = opcion.substring(opcion.length - 1, opcion.length);
+    const div = `divOpcion${num}`;
+    document.getElementById(div).style.display = "block";
     return;
 }
 
-function ocultarFormularios(){
-    const select = document.getElementById("select");
+function ocultarOpciones(){
+    const select = document.getElementById("Opciones");
     const numOpciones = select.options.length;
     for(let i = 1; i <= numOpciones; i++){
-        const divs = `divOpcion${i}`;
-        document.getElementById(divs).style.display = "none";
+        const div = `divOpcion${i}`;
+        document.getElementById(div).style.display = "none";
     }
     return;
 }
 
-document.getElementById("select").addEventListener("change", () =>{
-    ocultarFormularios();
-    const opci = document.getElementById("select").value;
-    mostrarFormulario(opci);
+let blenderState = "turn-off";
+let blender = document.getElementById("blender");
+let blenderSound = document.getElementById("blender-sound");
+let blenderButton = document.getElementById("blender-button-sound");
+
+function turnOnBlender(){
+    if(blenderState == "turn-off"){
+        blenderState = "turn-on";
+        hacerRuido();
+        blender.classList.add("active");
+    }else{
+        blenderState = "turn-off";
+        hacerRuido();
+        blender.classList.remove("active");
+    }
+}
+
+function hacerRuido(){
+    if(blenderSound.paused){
+        blenderButton.play();
+        blenderSound.play();
+    }else{
+        blenderButton.play();
+        blenderSound.pause();
+        blenderSound.currentTime = 0;
+    }
+}
+
+const submit = document.getElementById("submit");
+submit.addEventListener("click",function(event){
+    edad(event);
+});
+
+const img = document.getElementById("img");
+
+function edad(event){
+    event.preventDefault();
+    img.style.display = "none";
+    const paragraph = document.getElementById("paragraph");
+    const edad = parseInt(document.getElementById("text").value);
+
+    if(isNaN(edad)){
+        paragraph.innerHTML = "Ingrese un número, no una cadena";
+        return;
+    }
+
+    if(edad < 0){
+        paragraph.innerHTML = "Ingrese una edad positiva, mamagüevo";
+        return;
+    }
+
+    if(edad == 14){
+        paragraph.innerHTML = `¿Tienes ${edad}?<br>Activa cam 😈`
+        img.style.display = "block";
+        return;
+    }
+
+    if(edad < 18){
+        paragraph.innerHTML = "Eres menor de edad";
+        return;
+    }
+
+    paragraph.innerHTML = "Eres mayor de edad";
     return;
-})
+}
+
+let fireinthehole = document.getElementById("fire in the hole");
+function Haceruido(){
+    fireinthehole.play();
+}
