@@ -102,14 +102,14 @@ div#divOpcion4 .blender{
     margin: 0 auto 0 auto;
     width: 700px;
     height: 500px;
-    background-image: url(../Sugerencias/Sugerencia4/img/licuadora-off.jpg);
+    background-image: url(../Pagina2/Sugerencias/Sugerencia4/img/licuadora-off.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 div#divOpcion4 .blender.active{
-    background-image: url(../Sugerencias/Sugerencia4/img/licuadora-on.gif);
+    background-image: url(../Pagina2/Sugerencias/Sugerencia4/img/licuadora-on.gif);
 }
 
 div#divOpcion4 .blender-button{
@@ -162,5 +162,13 @@ div#divOpcion5 input[type="text"], input[type="submit"]{
 div#divOpcion5 input[type="submit"]{
     background-color: #4CAF50;
     color: white;
+    cursor: pointer;
+}
+
+#img:hover{
+    cursor: pointer;
+}
+
+div.blender-button{
     cursor: pointer;
 }

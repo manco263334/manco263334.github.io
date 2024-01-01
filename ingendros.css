@@ -108,16 +108,6 @@ footer{
     text-align: center;
 }
 
-/*.content a{
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid;
-    border-radius: 6px;
-    color: #9C27B0;
+figure img:hover{
+    cursor: pointer;
 }
-.Carta .content a:hover{
-    background-color: #9C27B0 ;
-    color: #fff;
-}*/

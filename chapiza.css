@@ -67,6 +67,7 @@ img{
 }
 
 footer{
+    display: block;
     text-align: center;
     background-color: red;
     border: 5px solid green;
@@ -108,4 +109,8 @@ footer{
 .Carta .content{
     padding: 15px;
     text-align: center;
+}
+
+figure img:hover{
+    cursor: pointer;
 }

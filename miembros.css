@@ -49,3 +49,8 @@ section article{
 img.pepe{
     height: 25%;
 }
+
+section div.historia-conteiner div.Historia article img{
+    width: 25%;
+}
+
