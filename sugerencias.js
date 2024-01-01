@@ -55,11 +55,16 @@ submit.addEventListener("click",function(event){
     edad(event);
 });
 
-const img = document.getElementById("img");
+const skibidi = document.getElementById("skibidi");
+function skibidisound(){
+    skibidi.play();
+}
+
+const img2 = document.getElementById("img2");
 
 function edad(event){
     event.preventDefault();
-    img.style.display = "none";
+    img2.style.display = "none";
     const paragraph = document.getElementById("paragraph");
     const edad = parseInt(document.getElementById("text").value);
 
@@ -75,7 +80,7 @@ function edad(event){
 
     if(edad == 14){
         paragraph.innerHTML = `¿Tienes ${edad}?<br>Activa cam 😈`
-        img.style.display = "block";
+        img2.style.display = "block";
         return;
     }
 
@@ -88,7 +93,7 @@ function edad(event){
     return;
 }
 
-let fireinthehole = document.getElementById("fire in the hole");
-function Haceruido(){
+const fireinthehole = document.getElementById("fire in the hole");
+function fireintheholesound(){
     fireinthehole.play();
 }
