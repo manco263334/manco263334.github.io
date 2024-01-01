@@ -102,14 +102,14 @@ div#divOpcion4 .blender{
     margin: 0 auto 0 auto;
     width: 700px;
     height: 500px;
-    background-image: url(../Pagina2/Sugerencias/Sugerencia4/img/licuadora-off.jpg);
+    background-image: url(../Sugerencias/Sugerencia4/img/licuadora-off.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 div#divOpcion4 .blender.active{
-    background-image: url(../Pagina2/Sugerencias/Sugerencia4/img/licuadora-on.gif);
+    background-image: url(../Sugerencias/Sugerencia4/img/licuadora-on.gif);
 }
 
 div#divOpcion4 .blender-button{
