@@ -165,7 +165,7 @@ div#divOpcion5 input[type="submit"]{
     cursor: pointer;
 }
 
-#img:hover{
+.img:hover{
     cursor: pointer;
 }
 
