@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <title>Transcribir TXT a Excel</title>
 </head>
 <body>
     <main>
         <h2>Sube un archivo de asistencia (.txt)</h2>
-        <input type="file" id="fileInput" accept=".txt"><br><br>
-        <pre id="output"></pre>
-        <button id="downloadExcel" disabled>Descargar Excel</button>
+        <input type="file" id="fileInput" accept=".txt">
+        <button onclick="procesarArchivo()">Convertir y Descargar Excel</button>
     </main>
-    <script src="index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </body>
+<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </html>
