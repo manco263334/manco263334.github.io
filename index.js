@@ -6,9 +6,13 @@ function parseHoras(entrada, salida) {
     const [h1, m1] = entrada.split(':').map(Number);
     const [h2, m2] = salida.split(':').map(Number);
     const inicio = h1 * 60 + m1;
-    const fin = h2 * 60 + m2;
+    let fin = h2 * 60 + m2;
 
-    if (fin - inicio <= 3) return "Entrada y salida similares";
+    if (h1 > h2) {
+        fin += 24 * 60;
+    }
+
+    if (fin - inicio <= 1) return "Entrada y salida similares";
 
     const horas = (fin - inicio) / 60;
     return horas.toFixed(2);
@@ -30,13 +34,13 @@ function procesarArchivo() {
             const matchDia = diaRegex.exec(line);
             const matchHoras = line.match(horaRegex);
             if (matchDia) {
-            const dia     = matchDia[0];
-            const entrada = matchHoras?.[0] || "--------";
-            const salida  = matchHoras?.[1] || "--------";
-            const horas   = parseHoras(entrada, salida);
-            data.push([line, dia, entrada, salida, horas, ""]);
+                const dia = matchDia[0];
+                const entrada = matchHoras?.[0] || "--------";
+                const salida = matchHoras?.[1] || "--------";
+                const horas = parseHoras(entrada, salida);
+                data.push([line, dia, entrada, salida, horas, ""]);
             } else {
-            data.push([line, "", "", "", "", ""]);
+                ata.push([line, "", "", "", "", ""]);
             }
         }
 
