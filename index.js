@@ -8,9 +8,7 @@ function parseHoras(entrada, salida) {
     const inicio = h1 * 60 + m1;
     let fin = h2 * 60 + m2;
 
-    if (h1 > h2) {
-        fin += 24 * 60;
-    }
+    if (h1 > h2) fin += 24 * 60;
 
     if (fin - inicio <= 1) return "Entrada y salida similares";
 
@@ -40,7 +38,7 @@ function procesarArchivo() {
                 const horas = parseHoras(entrada, salida);
                 data.push([line, dia, entrada, salida, horas, ""]);
             } else {
-                ata.push([line, "", "", "", "", ""]);
+                data.push([line, "", "", "", "", ""]);
             }
         }
 
@@ -53,7 +51,7 @@ function procesarArchivo() {
             const addr = XLSX.utils.encode_cell({ r: 0, c });
             if (!ws[addr]) continue;
             ws[addr].s = {
-            alignment: { horizontal: "center", vertical: "center" }
+                alignment: { horizontal: "center", vertical: "center" }
             };
         }
 
@@ -61,8 +59,8 @@ function procesarArchivo() {
         const colWidths = data[0].map((_, colIdx) => {
             // calcular longitud máxima de texto en esta columna
             const maxLen = data.reduce((max, row) => {
-            const cell = row[colIdx] == null ? "" : row[colIdx].toString();
-            return Math.max(max, cell.length);
+                const cell = row[colIdx] == null ? "" : row[colIdx].toString();
+                return Math.max(max, cell.length);
             }, 10);
             return { wch: maxLen + 2 }; // +2 para un poco de padding
         });
